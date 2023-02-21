@@ -1,0 +1,42 @@
+#MyBatis
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+spring:
+# DataSource config
+  datasource:
+    url: jdbc:mysql://localhost:3306/JAVA_FRAMEWORK
+    username: root
+    password: '0000'
+    hikari:
+      minimum-idle: '5'
+      maximum-pool-size: '10'
+      connection-timeout: '30000'
+# JPA config
+  jpa:
+    show-sql: 'true'
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl
+# Spring MVC config
+  mvc:
+    view:
+      prefix: /
+# Spring Web
+server:
+    servlet:
+      context-path: /springboot-exercise
+# Logback config
+logging:
+  level:
+    tw:
+      idv:
+      william: debug
+  pattern:
+    console: '%d{yyyy-MM-dd HH:mm:ss.SSS} [%level] [%t] %msg%n'
+    file: '%d{yyyy-MM-dd HH:mm:ss.SSS} [%level] [%t] [%line] %msg%n'
+  file:
+    path: ./
